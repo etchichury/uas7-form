@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'utils/colors.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -7,12 +9,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Dias',
-      home: new MyHomePage(
-        title: 'Dias'
-      )
-    );
+    return MaterialApp(title: 'Dias', home: new MyHomePage(title: 'Dias'));
   }
 }
 
@@ -26,7 +23,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,9 +33,12 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.menu, color: Colors.white, size: 30,),
-            onPressed: null
-          )
+              icon: Icon(
+                Icons.menu,
+                color: colors['primary_white'],
+                size: 30,
+              ),
+              onPressed: null)
         ],
         backgroundColor: Colors.transparent,
       ),
@@ -70,7 +69,6 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class DayResume extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -78,7 +76,8 @@ class DayResume extends StatelessWidget {
         children: [
           Text(
             '29/03',
-            style: TextStyle(fontWeight: FontWeight.w300, fontSize: 30, color: Colors.white),
+            style: TextStyle(
+                fontWeight: FontWeight.w300, fontSize: 30, color: Colors.white),
             textAlign: TextAlign.center,
           ),
           Divider(color: Colors.white),
@@ -86,26 +85,38 @@ class DayResume extends StatelessWidget {
           Row(
             children: [
               Text(
-                'Urticas', 
-                style: TextStyle(fontWeight: FontWeight.w300, fontSize: 25, color: Colors.white),
+                'Urticas',
+                style: TextStyle(
+                    fontWeight: FontWeight.w300,
+                    fontSize: 25,
+                    color: Colors.white),
                 textAlign: TextAlign.left,
               ),
               Spacer(),
               Text(
                 '0',
-                style: TextStyle(fontWeight: FontWeight.w300, fontSize: 25, color: Colors.white),
+                style: TextStyle(
+                    fontWeight: FontWeight.w300,
+                    fontSize: 25,
+                    color: Colors.white),
                 textAlign: TextAlign.right,
               ),
             ],
           ),
           Spacer(flex: 1),
-          Row(
-            children: [
-              Text('Coceira', style: TextStyle(fontWeight: FontWeight.w300, fontSize: 25, color: Colors.white)),
-              Spacer(),
-              Text('0', style: TextStyle(fontWeight: FontWeight.w300, fontSize: 25, color: Colors.white)),
-            ]
-          )
+          Row(children: [
+            Text('Coceira',
+                style: TextStyle(
+                    fontWeight: FontWeight.w300,
+                    fontSize: 25,
+                    color: Colors.white)),
+            Spacer(),
+            Text('0',
+                style: TextStyle(
+                    fontWeight: FontWeight.w300,
+                    fontSize: 25,
+                    color: Colors.white)),
+          ])
         ],
       ),
       padding: EdgeInsets.fromLTRB(20, 10, 20, 20),
@@ -115,11 +126,7 @@ class DayResume extends StatelessWidget {
         color: const Color(0xff2f2f2f),
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
-          BoxShadow(
-            spreadRadius: 0,
-            blurRadius: 10,
-            offset: Offset(2, 10)
-          )
+          BoxShadow(spreadRadius: 0, blurRadius: 10, offset: Offset(2, 10))
         ],
       ),
     );
