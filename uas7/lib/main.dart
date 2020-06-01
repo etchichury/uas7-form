@@ -9,6 +9,6 @@ void main() {
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'UAS7 Form', home: new MainScreen(title: 'Dias'));
+    return MaterialApp(title: 'UAS7 Form', home: new MainScreen());
   }
 }
