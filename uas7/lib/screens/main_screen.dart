@@ -22,14 +22,18 @@ class _MainScreenSatate extends State<MainScreen> {
       key: _scaffoldKey,
       appBar: AppBar(
         title: Text(
-          widget.title,
-          style: TextStyle(fontWeight: FontWeight.w300, fontSize: 35),
+          'Dias',
+          style: TextStyle(
+            fontWeight: FontWeight.w300,
+            fontSize: 35,
+            color: secondaryColor
+          ),
         ),
         actions: [
           IconButton(
             icon: Icon(
               Icons.menu,
-              color: primaryWhiteColor,
+              color: secondaryColor,
               size: 30,
             ),
             onPressed: () => {_scaffoldKey.currentState.openEndDrawer()}
