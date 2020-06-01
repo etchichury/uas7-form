@@ -14,6 +14,25 @@ class EndDrawer extends StatelessWidget {
       color: backgroundColor,
       child: Column(
         children: [
+          SizedBox(height: 30),
+          Container(
+            alignment: Alignment.topLeft,
+            margin: EdgeInsets.only(left: 20),
+            child: Text(
+              'Menu',
+              style: TextStyle(
+                fontSize: 36,
+                fontWeight: FontWeight.w300,
+                color: secondaryColor
+              ),
+            ),
+          ),
+          Divider(
+            color: secondaryWhiteColor,
+            indent: 20,
+            endIndent: 20,
+            thickness: 1.5,
+          ),
           Card(
             child: ListTile(
               leading: Icon(Icons.assessment, color: secondaryWhiteColor,),
@@ -28,7 +47,7 @@ class EndDrawer extends StatelessWidget {
             onTap: null, // TODO: lead to results
             ),
             color: primaryColor,
-            margin: EdgeInsets.fromLTRB(15, 70, 15, 15),
+            margin: EdgeInsets.fromLTRB(15, 15, 15, 15),
             elevation: 20.0,
           ),
           Card(
