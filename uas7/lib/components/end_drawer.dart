@@ -42,7 +42,12 @@ class EndDrawer extends StatelessWidget {
                   fontSize: 22
                 )
               ),
-              onTap: null, // TODO: lead to days list
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MainScreen())  
+                );
+              },
             ),
             color: primaryColor,
             margin: EdgeInsets.all(15),
