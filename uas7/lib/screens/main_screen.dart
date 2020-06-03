@@ -1,69 +1,28 @@
 import 'package:flutter/material.dart';
 
 import 'package:uas7/utils/colors.dart';
+import 'package:uas7/components/app_bar.dart';
 import 'package:uas7/components/day_overview.dart';
 import 'package:uas7/components/end_drawer.dart';
 
 class MainScreen extends StatefulWidget {
-  MainScreen({Key key, this.title}) : super(key: key);
-
-  final String title;
+  MainScreen({Key key}) : super(key: key);
 
   @override
-  _MainScreenSatate createState() => _MainScreenSatate();
+  _MainScreenState createState() => _MainScreenState();
 }
 
-class _MainScreenSatate extends State<MainScreen> {
+class _MainScreenState extends State<MainScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      appBar: AppBar(
-        title: Text(
-          'Dias',
-          style: TextStyle(
-            fontWeight: FontWeight.w300,
-            fontSize: 35,
-            color: secondaryColor
-          ),
-        ),
-        actions: [
-          IconButton(
-            icon: Icon(
-              Icons.menu,
-              color: secondaryColor,
-              size: 30,
-            ),
-            onPressed: () => {_scaffoldKey.currentState.openEndDrawer()}
-          )
-        ],
-        backgroundColor: Colors.transparent,
-        automaticallyImplyLeading: false
-      ),
+      appBar: appBar(_scaffoldKey, 'Dias'),
       body: Center(
         child: ListView(
           children: [
-            new DayOverview(),
-            new DayOverview(),
-            new DayOverview(),
-            new DayOverview(),
-            new DayOverview(),
-            new DayOverview(),
-            new DayOverview(),
-            new DayOverview(),
-            new DayOverview(),
-            new DayOverview(),
-            new DayOverview(),
-            new DayOverview(),
-            new DayOverview(),
-            new DayOverview(),
-            new DayOverview(),
-            new DayOverview(),
-            new DayOverview(),
-            new DayOverview(),
-            new DayOverview(),
             new DayOverview(),
           ],
         ),
