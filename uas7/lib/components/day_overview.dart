@@ -1,67 +1,90 @@
 import 'package:flutter/material.dart';
+import 'package:uas7/utils/colors.dart';
 
-class DayOverview extends StatelessWidget {
-  const DayOverview({Key key}) : super(key: key);
+class DayOverview extends StatefulWidget {
+  DayOverview({Key key}) : super(key: key);
 
+  @override
+  _DayOverviewState createState() => _DayOverviewState();
+}
+
+class _DayOverviewState extends State<DayOverview> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(
-        children: [
-          Text(
-            '29/03',
-            style: TextStyle(
-                fontWeight: FontWeight.w300, fontSize: 30, color: Colors.white),
-            textAlign: TextAlign.center,
+      margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+      child: Material(
+        shadowColor: Colors.black54,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        elevation: 20.0,
+        child: Container(
+          decoration: BoxDecoration(
+            color: primaryColor,
+            borderRadius: BorderRadius.circular(10)
           ),
-          Divider(color: Colors.white),
-          Spacer(flex: 2),
-          Row(
-            children: [
-              Text(
-                'Urticas',
-                style: TextStyle(
-                    fontWeight: FontWeight.w300,
-                    fontSize: 25,
-                    color: Colors.white),
-                textAlign: TextAlign.left,
+          child: Material(
+            type: MaterialType.transparency,
+            elevation: 20.0,
+            color: Colors.transparent,
+            shadowColor: Colors.black54,
+            child: InkWell(
+              splashColor: Colors.grey[600],
+              borderRadius: BorderRadius.circular(10),
+              onTap: () {},
+              child: Container(
+                padding: EdgeInsets.all(16.0),
+                child: Column(
+                  children: [
+                    Text(
+                      '29/03',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w300, fontSize: 30, color: Colors.white),
+                      textAlign: TextAlign.center,
+                    ),
+                    Divider(color: Colors.white),
+                    SizedBox(height: 10),
+                    Row(
+                      children: [
+                        Text(
+                          'Urticas',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w300,
+                              fontSize: 25,
+                              color: Colors.white),
+                          textAlign: TextAlign.left,
+                        ),
+                        Spacer(),
+                        Text(
+                          '0',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w300,
+                              fontSize: 25,
+                              color: Colors.white),
+                          textAlign: TextAlign.right,
+                        ),
+                      ],
+                    ),
+                    Spacer(flex: 1),
+                    Row(children: [
+                      Text('Coceira',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w300,
+                              fontSize: 25,
+                              color: Colors.white)),
+                      Spacer(),
+                      Text('0',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w300,
+                              fontSize: 25,
+                              color: Colors.white)),
+                    ])
+                  ],
+                ),
+                height: 170,
               ),
-              Spacer(),
-              Text(
-                '0',
-                style: TextStyle(
-                    fontWeight: FontWeight.w300,
-                    fontSize: 25,
-                    color: Colors.white),
-                textAlign: TextAlign.right,
-              ),
-            ],
+            ),
           ),
-          Spacer(flex: 1),
-          Row(children: [
-            Text('Coceira',
-                style: TextStyle(
-                    fontWeight: FontWeight.w300,
-                    fontSize: 25,
-                    color: Colors.white)),
-            Spacer(),
-            Text('0',
-                style: TextStyle(
-                    fontWeight: FontWeight.w300,
-                    fontSize: 25,
-                    color: Colors.white)),
-          ])
-        ],
-      ),
-      padding: EdgeInsets.fromLTRB(20, 10, 20, 20),
-      margin: const EdgeInsets.fromLTRB(25, 12, 25, 12),
-      height: 170,
-      decoration: BoxDecoration(
-        color: const Color(0xff2f2f2f),
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(spreadRadius: 0, blurRadius: 10, offset: Offset(2, 10))
-        ],
+        ),
       ),
     );
   }
