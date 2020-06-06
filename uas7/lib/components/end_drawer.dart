@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:uas7/screens/form_screen.dart';
+import 'package:uas7/screens/results_screen.dart';
 import 'package:uas7/screens/main_screen.dart';
 import 'package:uas7/utils/colors.dart';
 
@@ -49,7 +49,7 @@ class EndDrawer extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context, 
-                  MaterialPageRoute(builder: (context) => FormScreen())
+                  MaterialPageRoute(builder: (context) => ResultsScreen())
                 );
               },
             ),
