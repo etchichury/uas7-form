@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:uas7/screens/form_screen.dart';
 import 'package:uas7/utils/colors.dart';
 
-class DayOverview extends StatefulWidget {
-  DayOverview({Key key}) : super(key: key);
+class DayOverviewTile extends StatefulWidget {
+  DayOverviewTile({Key key}) : super(key: key);
 
   @override
-  _DayOverviewState createState() => _DayOverviewState();
+  _DayOverviewTileState createState() => _DayOverviewTileState();
 }
 
-class _DayOverviewState extends State<DayOverview> {
+class _DayOverviewTileState extends State<DayOverviewTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,7 +31,12 @@ class _DayOverviewState extends State<DayOverview> {
             child: InkWell(
               splashColor: Colors.grey[600],
               borderRadius: BorderRadius.circular(10),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context, 
+                  MaterialPageRoute(builder: (context) => FormScreen())
+                );
+              },
               child: Container(
                 padding: EdgeInsets.all(16.0),
                 child: Column(
