@@ -11,5 +11,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
       home: new MainScreen(),
       theme: ThemeData.dark(),
+      debugShowCheckedModeBanner: false,
+    );
   }
 }
