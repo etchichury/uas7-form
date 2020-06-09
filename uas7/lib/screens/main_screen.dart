@@ -20,12 +20,10 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: appBar(_scaffoldKey, 'Dias'),
-      body: Center(
-        child: ListView(
-          children: [
-            new DayOverview(),
-          ],
-        ),
+      body: ListView(
+        children: [
+          new DayOverviewTile(),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
