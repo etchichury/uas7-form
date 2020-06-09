@@ -79,6 +79,25 @@ class EndDrawer extends StatelessWidget {
             margin: EdgeInsets.all(15),
             elevation: 20.0,
           ),
+          Card(
+            child: ListTile(
+              leading: Icon(Icons.info, color: secondaryWhiteColor),
+              title: Text(
+                'Sobre UAS7',
+                style: TextStyle(
+                  color: primaryWhiteColor, 
+                  fontWeight: FontWeight.w300,
+                  fontSize: 22
+                )
+              ),
+              onTap: () {
+                // TODO: about uas7 screen
+              },
+            ),
+            color: primaryColor,
+            margin: EdgeInsets.all(15),
+            elevation: 20.0,
+          ),
           Spacer(),
           Container(
             child: Text(
