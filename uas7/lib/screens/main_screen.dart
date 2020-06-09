@@ -28,7 +28,12 @@ class _MainScreenState extends State<MainScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: null,
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => FormScreen())
+          );
+        },
         tooltip: 'Registrar dia',
         child: Icon(Icons.add),
         backgroundColor: secondaryColor,
