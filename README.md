@@ -22,7 +22,7 @@ Or you can fork the project.
 
 After that, install the packages:
 
-```
+```sh
 cd uas7
 flutter pub get
 ```
