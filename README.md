@@ -1,16 +1,43 @@
-# uas7
+# UAS7 Form
 
-A new Flutter project.
+## About
 
-## Getting Started
+This is project was created to help me fill the UAS7 (Urticaria Activity Score) form that has to be completed over 7 consecutive days.
 
-This project is a starting point for a Flutter application.
+The responses will help the doctor assess how active the Chronic Idiopathic Urticaria (CIU) is.
 
-A few resources to get you started if this is your first Flutter project:
+Currently, the application language is portuguese (Brazil), but I will add english support later on.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Usage
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+You can use this software as you wish, the only restriction is the preservation of copyright and there is no liability or warranty.
+
+So, to use it, you will have to clone the project:
+
+```
+git clone git@github.com:etchichury/uas7-form.git
+```
+
+Or you can fork the project.
+
+After that, install the packages:
+
+```
+cd uas7
+flutter pub get
+```
+
+Finally:
+```
+flutter run
+```
+
+## Contributing
+
+For now, I will not accepet any pull requests. At least not until I finish the app. I want to code this application from the ground up, so I can improve my Flutter skills.
+
+After the end of the basic project, I will be open to fixes, improvements and new features.
+
+## License
+
+This project is licensed under the terms of the [MIT license](LICENSE).
