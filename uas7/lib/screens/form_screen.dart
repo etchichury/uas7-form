@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:uas7/components/app_bar.dart';
 import 'package:uas7/components/end_drawer.dart';
 import 'package:uas7/components/form_tile.dart';
+import 'package:uas7/components/save_button.dart';
 import 'package:uas7/utils/colors.dart';
 
 class FormScreen extends StatefulWidget {
@@ -38,7 +39,7 @@ class _FormScreenState extends State<FormScreen> {
       body: Column(
         children: [
           new FormTile(
-            formTexts: _whealFormTexts, 
+            formTexts: _whealFormTexts,
             title: 'Urticas',
             callback: (val) => setState(() => _whealCount = val),
           ),
@@ -48,7 +49,8 @@ class _FormScreenState extends State<FormScreen> {
             title: 'Coceira',
             callback: (val) => setState(() => _itchCount = val),
           ),
-          finalScoreTile('Coceira', _itchCount)
+          finalScoreTile('Coceira', _itchCount),
+          new SaveButton()
         ],
       ),
       endDrawer: new EndDrawer(),
@@ -58,31 +60,21 @@ class _FormScreenState extends State<FormScreen> {
 
   Widget finalScoreTile(String title, int value) {
     return Container(
-      child: Row(
-        children: [
-          Text(
-            'Pontuação $title',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w300
-            ),
-          ),
-          Spacer(),
-          Text(
-            '$value',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w400
-            ),
-          )
-        ]
-      ),
-      margin: EdgeInsets.only(top: 5, left: 15, right: 15, bottom: 14),
+      child: Row(children: [
+        Text(
+          'Pontuação $title',
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w300),
+        ),
+        Spacer(),
+        Text(
+          '$value',
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+        )
+      ]),
+      margin: EdgeInsets.only(top: 5, left: 15, right: 15, bottom: 10),
       padding: EdgeInsets.all(15),
       decoration: BoxDecoration(
-        color: primaryColor,
-        borderRadius: BorderRadius.circular(10)
-      ),
+          color: primaryColor, borderRadius: BorderRadius.circular(10)),
     );
   }
 }
