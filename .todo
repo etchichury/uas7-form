@@ -1,0 +1,10 @@
+05/08:
+    ✔ Add save button to form screen @done(20-08-06 01:23)
+    ☐ Add "About UAS7 Form" screen
+    ☐ Before the creation of a new form, the user must imput the day which the form is refering to
+        I can place the current day as the default value to make it easier for the user
+    ☐ Save information to the Hive database
+    ☐ Retrieve information from the Hive database
+
+    I think I should tranform the ListTiles from the menu into a component
+    It will probably help me in the future. 
