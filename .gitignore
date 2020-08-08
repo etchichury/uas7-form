@@ -1,0 +1,42 @@
+# Miscellaneous
+uas7/*.class
+uas7/*.log
+uas7/*.pyc
+uas7/*.swp
+uas7/.DS_Store
+uas7/.atom/
+uas7/.buildlog/
+uas7/.history
+uas7/.svn/
+uas7/pubspec.lock
+
+# IntelliJ related
+uas7/*.iml
+uas7/*.ipr
+uas7/*.iws
+uas7/.idea/
+
+.vscode/
+
+# Flutter/Dart/Pub related
+uas7/**/doc/api/
+uas7/**/ios/Flutter/.last_build_id
+uas7/.dart_tool/
+uas7/.flutter-plugins
+uas7/.flutter-plugins-dependencies
+uas7/.packages
+uas7/.pub-cache/
+uas7/.pub/
+uas7/build/
+
+# Web related
+uas7/lib/generated_plugin_registrant.dart
+
+# Symbolication related
+uas7/app.*.symbols
+
+# Obfuscation related
+uas7/app.*.map.json
+
+# Exceptions to above rules.
+!/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
