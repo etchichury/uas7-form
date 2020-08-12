@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:uas7/screens/about_screen.dart';
 
 import 'package:uas7/screens/results_screen.dart';
 import 'package:uas7/screens/main_screen.dart';
 import 'package:uas7/utils/colors.dart';
-
 
 class EndDrawer extends StatelessWidget {
   const EndDrawer({Key key}) : super(key: key);
@@ -23,10 +23,9 @@ class EndDrawer extends StatelessWidget {
             child: Text(
               'Menu',
               style: TextStyle(
-                fontSize: 36,
-                fontWeight: FontWeight.w300,
-                color: secondaryColor
-              ),
+                  fontSize: 36,
+                  fontWeight: FontWeight.w300,
+                  color: secondaryColor),
             ),
           ),
           Divider(
@@ -37,20 +36,18 @@ class EndDrawer extends StatelessWidget {
           ),
           Card(
             child: ListTile(
-              leading: Icon(Icons.assessment, color: secondaryWhiteColor,),
-              title: Text(
-                'Resultados UAS7', 
-                style: TextStyle(
-                  color: primaryWhiteColor, 
-                  fontWeight: FontWeight.w300,
-                  fontSize: 20
-                )
+              leading: Icon(
+                Icons.assessment,
+                color: secondaryWhiteColor,
               ),
+              title: Text('Resultados UAS7',
+                  style: TextStyle(
+                      color: primaryWhiteColor,
+                      fontWeight: FontWeight.w300,
+                      fontSize: 20)),
               onTap: () {
-                Navigator.push(
-                  context, 
-                  MaterialPageRoute(builder: (context) => ResultsScreen())
-                );
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ResultsScreen()));
               },
             ),
             color: primaryColor,
@@ -59,20 +56,16 @@ class EndDrawer extends StatelessWidget {
           ),
           Card(
             child: ListTile(
-              leading: Icon(Icons.format_list_bulleted, color: secondaryWhiteColor),
-              title: Text(
-                'Lista de dias',
-                style: TextStyle(
-                  color: primaryWhiteColor, 
-                  fontWeight: FontWeight.w300,
-                  fontSize: 22
-                )
-              ),
+              leading:
+                  Icon(Icons.format_list_bulleted, color: secondaryWhiteColor),
+              title: Text('Lista de dias',
+                  style: TextStyle(
+                      color: primaryWhiteColor,
+                      fontWeight: FontWeight.w300,
+                      fontSize: 22)),
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => MainScreen())  
-                );
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MainScreen()));
               },
             ),
             color: primaryColor,
@@ -82,16 +75,16 @@ class EndDrawer extends StatelessWidget {
           Card(
             child: ListTile(
               leading: Icon(Icons.info, color: secondaryWhiteColor),
-              title: Text(
-                'Sobre UAS7',
-                style: TextStyle(
-                  color: primaryWhiteColor, 
-                  fontWeight: FontWeight.w300,
-                  fontSize: 22
-                )
-              ),
+              title: Text('Sobre UAS7',
+                  style: TextStyle(
+                      color: primaryWhiteColor,
+                      fontWeight: FontWeight.w300,
+                      fontSize: 22)),
               onTap: () {
-                // TODO: about uas7 screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AboutScreen())
+                );
               },
             ),
             color: primaryColor,
@@ -103,9 +96,7 @@ class EndDrawer extends StatelessWidget {
             child: Text(
               'Made by\nEtchichury',
               style: TextStyle(
-                color: primaryWhiteColor,
-                fontWeight: FontWeight.w300
-              ),
+                  color: primaryWhiteColor, fontWeight: FontWeight.w300),
               textAlign: TextAlign.left,
             ),
             margin: EdgeInsets.only(bottom: 10),
