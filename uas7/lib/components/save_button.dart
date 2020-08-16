@@ -7,30 +7,25 @@ class SaveButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: ListTile(
-        title: Row(
-          children: [
-            Icon(Icons.save),
-            SizedBox(width: 5),
-            Text(
-              'Salvar',
-              style: TextStyle(
-                color: primaryWhiteColor,
-                fontWeight: FontWeight.w300,
-                fontSize: 20
-              )
-            )
-          ],
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListTile(
+          title: Row(
+            children: [
+              Icon(Icons.save),
+              SizedBox(width: 10),
+              Text('Salvar',
+                  style: TextStyle(
+                      color: primaryWhiteColor,
+                      fontWeight: FontWeight.w300,
+                      fontSize: 20))
+            ],
+            mainAxisAlignment: MainAxisAlignment.center,
+          ),
+          onTap: () {
+            // save to Hive
+          },
         ),
-        onTap: () {
-          // save to Hive
-        },
-        contentPadding: EdgeInsets.only(left: 10, right: 10),
-      ),
         color: primaryColor,
-        margin: EdgeInsets.only(left: 15, right: 15),
-        elevation: 20
-      );
+        margin: EdgeInsets.only(left: 15, right: 15, top: 5, bottom: 10),
+        elevation: 20);
   }
 }
