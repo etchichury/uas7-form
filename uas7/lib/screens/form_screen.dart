@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:uas7/components/app_bar.dart';
+import 'package:uas7/components/date_picker_button.dart';
 import 'package:uas7/components/end_drawer.dart';
 import 'package:uas7/components/form_tile.dart';
 import 'package:uas7/components/save_button.dart';
@@ -36,8 +37,9 @@ class _FormScreenState extends State<FormScreen> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: appBar(_scaffoldKey, 'Formulário'),
-      body: Column(
+      body: ListView(
         children: [
+          new DatePickerButton(),
           new FormTile(
             formTexts: _whealFormTexts,
             title: 'Urticas',
@@ -71,7 +73,7 @@ class _FormScreenState extends State<FormScreen> {
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
         )
       ]),
-      margin: EdgeInsets.only(top: 5, left: 15, right: 15, bottom: 10),
+      margin: EdgeInsets.only(top: 5, left: 15, right: 15, bottom: 5),
       padding: EdgeInsets.all(15),
       decoration: BoxDecoration(
           color: primaryColor, borderRadius: BorderRadius.circular(10)),
