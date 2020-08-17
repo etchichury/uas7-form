@@ -1,8 +1,9 @@
 05/08:
     ✔ Add save button to form screen @done(20-08-06 01:23)
     ✔ Add "About UAS7 Form" screen @done(20-08-13 01:18)
-    ☐ Before the creation of a new form, the user must input the day which the form is refering to
-        I can place the current day as the default value to make it easier for the user
+    ✔ Before the creation of a new form, the user must input the day which the form is refering to @done(20-08-17 01:25)
+        I can place the current day as the default value to make it easier for the user (done)
+        This input is not before, it is the first input in the form
     ☐ Save information to the Hive database
     ☐ Retrieve information from the Hive database
 
