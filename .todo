@@ -2,9 +2,29 @@
     ✔ Add save button to form screen @done(20-08-06 01:23)
     ✔ Add "About UAS7 Form" screen @done(20-08-13 01:18)
     ✔ Before the creation of a new form, the user must input the day which the form is refering to @done(20-08-17 01:25)
-        I can place the current day as the default value to make it easier for the user (done)
+        I can place the current day as the default value to make it easier for the 
+        user (done)
         This input is not before, it is the first input in the form
     ☐ Save information to the Hive database
+        For saving and retrieving data I don't think I need something too complex.
+        So I found this simple and lightweight key-value database.
+        Day schema:
+            {
+              "date": "27/8",
+              "itch": 3,
+              "wheals": 1"
+            }
+        Week schema (HiveList):
+            {
+              "days": [
+                {
+                  "date": "27/8",
+                  "itch": 3,
+                  "wheals": 1"
+                }
+              ]
+            }
+            
     ☐ Retrieve information from the Hive database
 
     I think I should tranform the ListTiles from the menu into a component
