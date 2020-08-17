@@ -26,6 +26,10 @@
             }
             
     ☐ Retrieve information from the Hive database
+      For retrieving the weekly results dates I can do something like this
+        list.sort((a, b) => a.compareTo(b));
+        print(list.first);
+        print(list.last);
 
     I think I should tranform the ListTiles from the menu into a component
     It will probably help me in the future. 
