@@ -1,4 +1,5 @@
 # UAS7 Form
+[![Codemagic build status](https://api.codemagic.io/apps/5f69559d40212b229dc5258e/5f69559d40212b229dc5258d/status_badge.svg)](https://codemagic.io/apps/5f69559d40212b229dc5258e/5f69559d40212b229dc5258d/latest_build)
 
 ## About
 
