@@ -79,4 +79,27 @@ class _FormScreenState extends State<FormScreen> {
           color: primaryColor, borderRadius: BorderRadius.circular(10)),
     );
   }
+
+  Widget saveButton() {
+    return Card(
+        child: ListTile(
+          title: Row(
+            children: [
+              Icon(Icons.save),
+              SizedBox(width: 10),
+              Text('Salvar',
+                  style: TextStyle(
+                      color: primaryWhiteColor,
+                      fontWeight: FontWeight.w300,
+                      fontSize: 20))
+            ],
+            mainAxisAlignment: MainAxisAlignment.center,
+          ),
+          onTap: () async {
+          },
+        ),
+        color: primaryColor,
+        margin: EdgeInsets.only(left: 15, right: 15, top: 5, bottom: 10),
+        elevation: 20);
+  }
 }
