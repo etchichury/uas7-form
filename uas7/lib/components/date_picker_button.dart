@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:uas7/utils/colors.dart';
 
+typedef void DateTimeCallback(DateTime val);
+
 class DatePickerButton extends StatefulWidget {
-  DatePickerButton({Key key}) : super(key: key);
+  DatePickerButton({Key key, this.callback});
+
+  final DateTimeCallback callback;
 
   @override
   _DatePickerButtonState createState() => _DatePickerButtonState();
@@ -37,6 +41,7 @@ class _DatePickerButtonState extends State<DatePickerButton> {
             if (datePick != null && datePick != _date) {
               setState(() {
                 _date = datePick;
+                widget.callback(_date);
               });
             }
           },
