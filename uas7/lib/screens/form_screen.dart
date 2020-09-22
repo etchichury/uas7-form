@@ -32,7 +32,7 @@ class _FormScreenState extends State<FormScreen> {
 
   int _whealCount = 0;
   int _itchCount = 0;
-  DateTime _date;
+  DateTime _date = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
