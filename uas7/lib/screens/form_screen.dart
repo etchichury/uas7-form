@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'package:hive/hive.dart';
+
 import 'package:uas7/components/app_bar.dart';
 import 'package:uas7/components/date_picker_button.dart';
 import 'package:uas7/components/end_drawer.dart';
 import 'package:uas7/components/form_tile.dart';
-import 'package:uas7/components/save_button.dart';
 import 'package:uas7/utils/colors.dart';
 
 class FormScreen extends StatefulWidget {
@@ -31,6 +32,7 @@ class _FormScreenState extends State<FormScreen> {
 
   int _whealCount = 0;
   int _itchCount = 0;
+  DateTime _date;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +41,9 @@ class _FormScreenState extends State<FormScreen> {
       appBar: appBar(_scaffoldKey, 'Formulário'),
       body: ListView(
         children: [
-          new DatePickerButton(),
+          new DatePickerButton(
+            callback: (val) => setState(() => _date = val),
+          ),
           new FormTile(
             formTexts: _whealFormTexts,
             title: 'Urticas',
@@ -52,7 +56,7 @@ class _FormScreenState extends State<FormScreen> {
             callback: (val) => setState(() => _itchCount = val),
           ),
           finalScoreTile('Coceira', _itchCount),
-          new SaveButton()
+          saveButton()
         ],
       ),
       endDrawer: new EndDrawer(),
@@ -96,6 +100,13 @@ class _FormScreenState extends State<FormScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
           ),
           onTap: () async {
+            var box = await Hive.openBox('days');
+            box.add({
+              'date': _date,
+              'wheal_count': _whealCount,
+              'itch_count': _itchCount,
+              'total_score': _whealCount + _itchCount
+            });
           },
         ),
         color: primaryColor,
