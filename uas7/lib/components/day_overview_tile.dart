@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 import 'package:uas7/screens/form_screen.dart';
 import 'package:uas7/utils/colors.dart';
 
 class DayOverviewTile extends StatefulWidget {
-  DayOverviewTile({Key key}) : super(key: key);
+  DayOverviewTile({Key key, this.date, this.whealsScore, this.itchScore});
+
+  final DateTime date;
+  final int whealsScore;
+  final int itchScore;
 
   @override
   _DayOverviewTileState createState() => _DayOverviewTileState();
@@ -20,9 +25,7 @@ class _DayOverviewTileState extends State<DayOverviewTile> {
         elevation: 20.0,
         child: Container(
           decoration: BoxDecoration(
-            color: primaryColor,
-            borderRadius: BorderRadius.circular(10)
-          ),
+              color: primaryColor, borderRadius: BorderRadius.circular(10)),
           child: Material(
             type: MaterialType.transparency,
             elevation: 20.0,
@@ -32,19 +35,19 @@ class _DayOverviewTileState extends State<DayOverviewTile> {
               splashColor: Colors.grey[600],
               borderRadius: BorderRadius.circular(10),
               onTap: () {
-                Navigator.push(
-                  context, 
-                  MaterialPageRoute(builder: (context) => FormScreen())
-                );
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => FormScreen()));
               },
               child: Container(
                 padding: EdgeInsets.all(16.0),
                 child: Column(
                   children: [
                     Text(
-                      '29/03',
+                      '${widget.date.day}/${widget.date.month}',
                       style: TextStyle(
-                          fontWeight: FontWeight.w300, fontSize: 30, color: Colors.white),
+                          fontWeight: FontWeight.w300,
+                          fontSize: 30,
+                          color: Colors.white),
                       textAlign: TextAlign.center,
                     ),
                     Divider(color: Colors.white),
@@ -61,7 +64,7 @@ class _DayOverviewTileState extends State<DayOverviewTile> {
                         ),
                         Spacer(),
                         Text(
-                          '0',
+                          '${widget.whealsScore}',
                           style: TextStyle(
                               fontWeight: FontWeight.w300,
                               fontSize: 25,
@@ -78,7 +81,7 @@ class _DayOverviewTileState extends State<DayOverviewTile> {
                               fontSize: 25,
                               color: Colors.white)),
                       Spacer(),
-                      Text('0',
+                      Text('${widget.itchScore}',
                           style: TextStyle(
                               fontWeight: FontWeight.w300,
                               fontSize: 25,

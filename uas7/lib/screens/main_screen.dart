@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+
 import 'package:uas7/components/app_bar.dart';
 import 'package:uas7/components/day_overview_tile.dart';
 import 'package:uas7/components/end_drawer.dart';
@@ -21,17 +24,26 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: appBar(_scaffoldKey, 'Dias'),
-      body: ListView(
-        children: [
-          new DayOverviewTile(),
-        ],
+      body: ValueListenableBuilder(
+        valueListenable: Hive.box("days").listenable(),
+        builder: (context, Box daysBox, _) {
+          return ListView.builder(
+            itemCount: daysBox.values.length,
+            itemBuilder: (context, index) {
+              var day = daysBox.getAt(index);
+              return DayOverviewTile(
+                date: day['date'],
+                itchScore: day['itchCount'],
+                whealsScore: day['whealCount'],
+              );
+            },
+          );
+        },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => FormScreen())
-          );
+              context, MaterialPageRoute(builder: (context) => FormScreen()));
         },
         tooltip: 'Registrar dia',
         child: Icon(Icons.add),

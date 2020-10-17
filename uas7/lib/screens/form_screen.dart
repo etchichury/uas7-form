@@ -9,7 +9,7 @@ import 'package:uas7/components/form_tile.dart';
 import 'package:uas7/utils/colors.dart';
 
 class FormScreen extends StatefulWidget {
-  FormScreen({Key key}) : super(key: key);
+  FormScreen({Key key});
 
   @override
   State<StatefulWidget> createState() => new _FormScreenState();
@@ -99,13 +99,13 @@ class _FormScreenState extends State<FormScreen> {
             ],
             mainAxisAlignment: MainAxisAlignment.center,
           ),
-          onTap: () async {
-            var box = await Hive.openBox('days');
-            box.add({
+          onTap: () {
+            var daysBox = Hive.box('days');
+            daysBox.add({
               'date': _date,
-              'wheal_count': _whealCount,
-              'itch_count': _itchCount,
-              'total_score': _whealCount + _itchCount
+              'whealCount': _whealCount,
+              'itchCount': _itchCount,
+              'totalScore': _whealCount + _itchCount
             });
           },
         ),

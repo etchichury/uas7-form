@@ -6,6 +6,7 @@ import 'screens/main_screen.dart';
 
 void main() async {
   await Hive.initFlutter();
+  await Hive.openBox("days");
   runApp(App());
 }
 
