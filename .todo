@@ -5,7 +5,7 @@
         I can place the current day as the default value to make it easier for the 
         user (done)
         This input is not before, it is the first input in the form
-    ☐ Save information to the Hive database
+    ✔ Save information to the Hive database @done(20-10-17 22:29)
         For saving and retrieving data I don't think I need something too complex.
         So I found this simple and lightweight key-value database.
         Day schema:
